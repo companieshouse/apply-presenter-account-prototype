@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {% if errorList.length > 0 %}
+    Error:
+  {% endif %}
+  Sign in to Companies House
+{% endblock %}
+{% block signOut %}{% endblock %}
+{% block backLink %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "start"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+
+      <h1 class="govuk-heading-xl">Sign in to Companies House</h1>
+      <p class="govuk-hint-text">You cannot use your WebFiling details to sign in. You must sign in to or register a Companies House account.</p>
+      <form action="/enter-your-address" method="post">
+
+
+          {{ govukInput({
+            label: {
+              text: "Email address"
+            },
+            id: "email",
+            name: "email",
+            value: email
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Password"
+            },
+            id: "password",
+            name: "password",
+            type: 'password',
+            value: password
+          }) }}
+  
+
+        {{ govukButton({
+          text: "Sign in"
+        }) }}
+      </form>
+      <p class="govuk-body">
+        <a href="" class="govuk-link">Register</a>
+      </p>
+      <p class="govuk-body">
+        <a href="" class="govuk-link">I've forgotten my password</a>
+      </p>
+
+      <p class="govuk-!-font-size-14 govuk-!-margin-top-8"><a href="generate-new-code" class="govuk-form-hint">Shortcut: Account already exists</a></p>
+    </div>
+  </div>
+{% endblock %}

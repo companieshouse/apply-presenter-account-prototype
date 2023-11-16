@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Generate a new code - Apply for a Companies House online filing presenter account - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "/includes/user-bar.html" %}
+  {% include "/includes/back-link.html" %}
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Generate a new code</h1>
+
+      <p class="govuk-body">**Content here**</p>
+
+      {{ govukButton({
+          text: "Continue",
+          href: "confirmation"
+        }) }}
+
+
+
+      </div>
+    </div>
+
+  {% endblock %}

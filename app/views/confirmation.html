@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Application submitted - Apply for a Companies House online filing presenter account - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "/includes/user-bar.html" %}
+  {% include "/includes/back-link.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Application submitted</h1>
+        <div class="govuk-panel__body">
+          **content here?**
+        </div>
+      </div>
+      <p>
+        We have sent a confirmation email to
+        <span class="govuk-!-font-weight-bold">{{ data['email'] }}</span>.
+      </p>
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">**Content here**</p>
+     
+      <p>
+        <a href="https://www.smartsurvey.co.uk/s/fileconfstmnt-feedback/">What did you think of this service?</a>
+        (takes 2 minutes)
+      </p>
+
+          </div>
+        </div>
+
+      {% endblock %}
