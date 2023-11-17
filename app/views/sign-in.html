@@ -21,7 +21,6 @@
 
       <h1 class="govuk-heading-xl">Sign in to Companies House</h1>
       <p class="govuk-hint-text">You cannot use your WebFiling details to sign in. You must sign in to or register a Companies House account.</p>
-      <form action="/enter-your-details" method="post">
 
 
           {{ govukInput({
@@ -45,9 +44,9 @@
   
 
         {{ govukButton({
-          text: "Sign in"
+          text: "Sign in",
+          href: "enter-your-details"
         }) }}
-      </form>
       <p class="govuk-body">
         <a href="" class="govuk-link">Register</a>
       </p>

@@ -9,7 +9,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
 
-router.post('/enter-your-details', function(request, response) {
+router.post('/generate-new-code', function(request, response) {
 
     var newCode = request.session.data['newCode']
     if (newCode == "no"){
@@ -18,3 +18,4 @@ router.post('/enter-your-details', function(request, response) {
         response.redirect("/enter-your-details")
     }
 })
+
