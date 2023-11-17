@@ -9,3 +9,12 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
 
+router.post('/enter-your-address', function(request, response) {
+
+    var newCode = request.session.data['newCode']
+    if (newCode == "no"){
+        response.redirect("/confirmation")
+    } else {
+        response.redirect("/enter-your-address")
+    }
+})
