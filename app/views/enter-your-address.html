@@ -28,6 +28,19 @@
 
   {{ govukInput({
     label: {
+      text: "Property name or number"
+    },
+      hint: {
+    text: "For example, 'Saron House', '116' or 'Unit 37a'."
+  },
+    id: "address-property",
+    name: "addressProperty",
+    autocomplete: "address-property"
+  }) }}
+
+
+  {{ govukInput({
+    label: {
       text: "Address line 1"
     },
     id: "address-line-1",
