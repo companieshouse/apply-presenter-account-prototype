@@ -26,10 +26,11 @@
                 isPageHeading: true
               }
             }) %}
-
+<br>
               {{ govukInput({
                     label: {
-                      text: "Full name"
+                      classes: "govuk-label--m",
+                      text: "Full name"       
                     },
                     id: "fullName",
                     name: "fullName",
@@ -37,6 +38,9 @@
                     spellcheck: false
                   }) }}
 
+                  <br>
+<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Correspondence address</h2>
+<p class="govuk-hint">We’ll use this to contact you if there’s a problem with your account. </p>
               {{ govukInput({
                 label: {
                   text: "Property name or number"
