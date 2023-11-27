@@ -27,18 +27,34 @@
      <!-- <p class="govuk-body-l">**Content here**</p> -->
       <p class="govuk-body">Use this service to apply for a presenter account to file online with Companies House using third-party software.</p>
       
-     <p>If you lose your presenter account details, use this service to apply for a new account.</p> 
+
+      <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      If you’ve lost your presenter account details
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  <p>You'll need to use this service to apply for a new account.</p>
+
+  <p>You must <a href="https://www.gov.uk/contact-companies-house" class="govuk-link">contact us</a> to report if you think someone else has access to or knows your presenter details. </p>
+
+  </div>
+</details>
+    
+    
+    <!-- <p>If you lose your presenter account details, use this service to apply for a new account.</p> -->
       <!--<p>You can also use this service to apply for a new account if you’ve lost your existing presenter account details. </p>-->
    <!--   <p class="govuk-body">If you already have a presenter account, you can use this service to request a new presenter ID and code. <a href="https://www.gov.uk/contact-companies-house" class="govuk-link">Contact Companies House</a> if you think your details have been shared or compromised.</p>  -->
 
-  <p class="govuk-body">You can only use a presenter account to file documents without a fee. You will need to <a href="https://apply-presenter-prototype-8bf1efc0699b.herokuapp.com/start" class="govuk-link">complete an application form</a> if you need to apply:</p>
+  <p class="govuk-body">You can only use a presenter account to file documents without a fee. You <strong>cannot</strong> use this service to:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>for a presenter credit account to file documents with a fee</li>
-        <li>to register as a lender to file electronic charge documents</li>
+        <li>apply for a presenter credit account to file documents with a fee</li>
+        <li>register as a lender to file electronic charge documents</li>
       </ul>
 
-
+<p>For these, you will need to <a href="https://apply-presenter-prototype-8bf1efc0699b.herokuapp.com/start" class="govuk-link">complete an application form</a>.</p>
 
     <!--  <h2 class="govuk-heading-m">What you'll need</h2>
          <p class="govuk-body">You'll need to:</p>
