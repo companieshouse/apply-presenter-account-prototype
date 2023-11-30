@@ -23,7 +23,7 @@
           name: "filter",
           fieldset: {
             legend: {
-              text: "What do you want to do?",
+              text: "What do you need to apply for?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -31,18 +31,27 @@
           items: [
             {
               value: "no-fee",
-              html: 'Apply for a presenter credit account to file documents <span class="govuk-!-font-weight-bold">without a fee</span>'
+              text: "Presenter account",
+              hint: {
+                html: "You can only file documents <strong>without a fee</strong>."
+              }
             },
             {
                 divider: "or"
             },
             {
               value: "fee",
-              html: 'Apply for a presenter credit account to file documents <span class="govuk-!-font-weight-bold">with a fee</span>'
+              text: "Presenter credit account",
+          hint: {
+                html: "You can file documents <strong>with a fee</strong>."
+              }
             },
             {
               value: "charges",
-              html: "Register as a lender to file electronic charge documents"
+              text: "To register as a lender",
+          hint: {
+                html: "You can file electronic charge (mortgage) documents."
+              }              
             }
           ]
         }) }}
