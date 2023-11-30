@@ -19,3 +19,15 @@ router.post('/generate-new-code', function(request, response) {
     }
 })
 
+router.post('/filter', function(request, response) {
+
+    var filter = request.session.data['filter']
+    if (filter == "fee"){
+        response.redirect("/stop")
+    } else if (filter == "charges"){
+        response.redirect("/stop")
+    } else {
+        response.redirect("/sign-in")
+    }
+})
+
