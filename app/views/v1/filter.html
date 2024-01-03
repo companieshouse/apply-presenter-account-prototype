@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What do you want to do? - Apply for a Companies House online filing presenter account - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "/includes/user-bar.html" %}
+  {% include "/includes/back-link.html" %}
+{% endblock %}
+
+
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v1/filter" method="post">
+
+    {{ govukRadios({
+          name: "filter",
+          fieldset: {
+            legend: {
+              text: "What do you need to apply for?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "no-fee",
+              text: "Presenter account",
+              hint: {
+                html: "You can only file documents <strong>without a fee</strong>."
+              }
+            },
+            {
+                divider: "or"
+            },
+            {
+              value: "fee",
+              text: "Presenter credit account",
+          hint: {
+                html: "You can file documents <strong>with a fee</strong>."
+              }
+            },
+            {
+              value: "charges",
+              text: "To register as a lender",
+          hint: {
+                html: "You can file electronic charge (mortgage) documents."
+              }              
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>  
+
+      </div>
+    </div>
+
+  {% endblock %}

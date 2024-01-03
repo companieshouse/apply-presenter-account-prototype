@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Application submitted - Apply for a Companies House online filing presenter account - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "/includes/user-bar.html" %}
+  {% include "/includes/back-link.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Application submitted</h1>
+
+      </div>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">We’ll create your presenter account. We’ll send an email to <span class="govuk-!-font-weight-bold">{{ data['email'] }}</span> with your:</p>
+
+
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>presenter ID</li>
+            <li>presenter code </li>
+          </ul>
+
+        <p>You must keep your ID and code secure. You will need them for online filings. </p>
+
+<!--           <h2 class="govuk-heading-m">If your application is rejected</h2>
+      <p>We'll email you to explain what to do next.</p> -->
+     <!-- <p>
+        <a href="https://www.smartsurvey.co.uk/s/fileconfstmnt-feedback/">What did you think of this service?</a>
+        (takes around 2 minutes to complete)
+      </p> -->
+      <p class="govuk-!-font-size-14 govuk-!-margin-top-8"><a href="/email/accepted-email" class="govuk-form-hint">Shortcut: link to accepted email</a><br><a href="/email/rejected-email" class="govuk-form-hint">Shortcut: link to rejected email</a></p>
+
+          </div>
+        </div>
+
+      {% endblock %}
