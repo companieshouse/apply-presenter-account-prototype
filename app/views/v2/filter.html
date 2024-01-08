@@ -23,7 +23,7 @@
           name: "filter",
           fieldset: {
             legend: {
-              text: "What do you need to apply for?",
+              text: "What do you need to file?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -31,27 +31,38 @@
           items: [
             {
               value: "no-fee",
-              text: "Presenter account",
-              hint: {
-                html: "You can only file company accounts and documents <strong>without a fee</strong>."
-              }
+              html:  "<p>Accounts and documents <strong>without a fee</strong></p>"
+              
             },
             {
               value: "fee",
-              text: "Presenter credit account",
-          hint: {
-                html: "You can file company accounts and documents <strong>with a fee</strong>."
-              }
+              html: "<p>Accounts and documents <strong>with or without a fee</strong></p>"
             },
             {
               value: "charges",
-              text: "To register as a lender",
-          hint: {
-                html: "You can file electronic charge (mortgage) documents."
-              }              
+              text: "Electronic charge (mortgage) documents"         
             }
           ]
         }) }}
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Accounts and documents with a fee
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
+   <p> There is a fee to file accounts for:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>overseas companies </li>
+      <li>community interest companies (CIC)</li>
+    </ul>
+    <p>You should check the documents you need to file to find out if they have a filing fee. It will say if there is a fee on the document itself. </p>
+  </div>
+</details>
+
+
 
       {{ govukButton({
           text: "Continue"
