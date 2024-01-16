@@ -23,7 +23,7 @@
           name: "filter",
           fieldset: {
             legend: {
-              text: "What do you need to file?",
+              text: "Do you need to file any accounts or documents that have a filing fee?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -31,16 +31,12 @@
           items: [
             {
               value: "no-fee",
-              html:  "<p>Accounts and documents <strong>without a filing fee</strong></p>"
+              html:  "<p>No - I only need to file accounts and documents <strong>without a filing fee</strong></p>"
               
             },
             {
               value: "fee",
-              html: "<p>Accounts and documents <strong>with and without a filing fee</strong></p>"
-            },
-            {
-              value: "charges",
-              text: "Electronic charge (mortgage) documents"         
+              html: "<p>Yes - I need to file accounts and documents <strong>with a filing fee</strong></p>"
             }
           ]
         }) }}
@@ -62,6 +58,10 @@
   </div>
 </details>
 
+
+<div class="govuk-inset-text">
+<p>If you need to file electronic charge (mortgage) documents, you will need to <a href="">apply to register as a lender</a> instead. </p>
+</div>
 
 
       {{ govukButton({
