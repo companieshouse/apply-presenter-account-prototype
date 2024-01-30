@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Application submitted - Apply for a Companies House online filing presenter account - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "/includes/user-bar.html" %}
+  {% include "/includes/back-link.html" %}
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">Check your answers before submitting your application</h1>
+
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "72 Guild Street<br>London<br>SE23 6FH"
+            },
+            actions: {
+              items: [
+                {
+                  href: "enter-your-details",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+    
+
+
+        {{ govukButton({
+          text: "Submit",
+          href: "confirmation"
+        }) }}
+
+
+
+          </div>
+        </div>
+
+      {% endblock %}

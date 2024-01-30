@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What do you want to do? - Apply for a Companies House online filing presenter account - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "/includes/user-bar.html" %}
+  {% include "/includes/back-link.html" %}
+{% endblock %}
+
+
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v2/filter" method="post">
+
+    {{ govukRadios({
+          name: "filter",
+          fieldset: {
+            legend: {
+              text: "What do you need to file?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "no-fee",
+              html:  "<p>Accounts and documents <strong>without a filing fee</strong></p>"
+              
+            },
+            {
+              value: "fee",
+              html: "<p>Accounts and documents <strong>with and without a filing fee</strong></p>"
+            },
+            {
+              value: "charges",
+              text: "Electronic charge (mortgage) documents"         
+            }
+          ]
+        }) }}
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Accounts and documents that have a filing fee
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
+   <p> There is a fee to file accounts for:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>overseas companies </li>
+      <li>community interest companies (CIC)</li>
+    </ul>
+    <p>You should check the documents you need to file. If there is a filing fee, it will say on the document itself. </p>
+  </div>
+</details>
+
+
+
+      {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>  
+
+      </div>
+    </div>
+
+  {% endblock %}

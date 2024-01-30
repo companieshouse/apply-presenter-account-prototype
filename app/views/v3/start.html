@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <h1 class="govuk-heading-xl">
+        {% if serviceName %}
+          {{ serviceName }}
+        {% endif %}
+      </h1>
+
+     <!-- <p class="govuk-body-l">**Content here**</p> -->
+      <p class="govuk-body">Use this service to apply for a presenter account to file online with Companies House using third-party software. You can only use a presenter account to file documents without a fee.</p>
+      
+
+      <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      If you’ve lost your presenter account details
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  <p>You'll need to use this service to apply for a new account.</p>
+
+  <p><a href="https://www.gov.uk/contact-companies-house" class="govuk-link">Contact us</a> if you have any questions about your account.</p>
+
+  </div>
+</details>
+    
+    
+
+
+
+
+    <p>You'll need to sign in or create a Companies House account to use this service. It takes around 5 minutes to apply. </p>
+
+
+      {{ govukButton({
+          text: "Start now",
+          href: "filter",
+          isStartButton: true
+        }) }}
+
+
+   
+
+      <p class="govuk-body"><a href="https://mcmw.abilitynet.org.uk/" class="govuk-link">Read advice from AbilityNet on how to adapt your device to meet your needs</a>. For example, changing the background colour or text size.</p>
+
+
+      </div>
+    </div>
+
+  {% endblock %}
