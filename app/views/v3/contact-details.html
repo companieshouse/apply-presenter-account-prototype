@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  What is your correspondence address? - Apply for a Companies House online filing presenter account - GOV.UK
+  Contact details - Apply for a Companies House online filing presenter account - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,9 +19,24 @@
 
       <form class="form" action="check-your-answers" method="post">
 
+ 
+
+     {{ govukInput({
+          label: {
+            text: "Who can we contact about this account?",
+            classes: "govuk-label--xl",
+            isPageHeading: true
+          },
+          hint: {
+            text: "We'll use this if we need more information"
+          },
+          id: "contact-name",
+          name: "contactName"
+        }) }}
+
             {% call govukFieldset({
               legend: {
-                text: "What is your correspondence address?",
+                text: "What is their correspondence address?",
                 classes: "govuk-fieldset__legend--l",
                 isPageHeading: true
               }
@@ -42,7 +57,6 @@
 
 
          <!--  <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Correspondence address</h2> -->
-            <p class="govuk-hint">We may use this to contact you about your account. </p>
                           
 
             <div class="govuk-form-group">
@@ -1138,6 +1152,10 @@
                   
                   </select>
                 </div>
+
+
+
+ 
 
       {{ govukButton({
           text: "Continue"
