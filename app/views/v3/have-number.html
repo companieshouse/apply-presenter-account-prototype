@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Do you have a company number? -   {{ serviceName }} - GOV.UK
+ Is the business you work for registered with Companies House? -   {{ serviceName }} - GOV.UK
 {% endblock %}
 {% block beforeContent %}
   {% include "/includes/user-bar.html" %}
@@ -23,17 +23,17 @@ Do you have a company number? -   {{ serviceName }} - GOV.UK
     <div id="haveNumber-hint" class="govuk-hint">
       The 8-character reference issued by Companies House when the company was set up
     </div>
-    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+    <div class="govuk-radios govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="haveNumber" name="haveNumber" type="radio" value="yes">
         <label class="govuk-label govuk-radios__label" for="haveNumber">
-          Yes
+          Yes - you'll need to give the company number 
         </label>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="haveNumber-2" name="haveNumber" type="radio" value="no">
         <label class="govuk-label govuk-radios__label" for="haveNumber-2">
-          No
+          No - you'll need to give the business name
         </label>
       </div>
     </div>
@@ -41,8 +41,15 @@ Do you have a company number? -   {{ serviceName }} - GOV.UK
 </div>
 
   {{ govukDetails({
-        summaryText: "Help with company number",
-        html: 'Use the <a class="govuk-link" href="https://find-and-update.company-information.service.gov.uk/">Companies House service</a> to find it.'
+        summaryText: "I do not work for a business",
+        html: '
+        <p class="govuk-body">You should enter your own name if:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>you do not work for a business, but you need to file for more than one company</li>
+            <li>you are a sole trader and do not have a different trading name</li>
+                  </ul>
+        
+        '
       }) }}
       
 

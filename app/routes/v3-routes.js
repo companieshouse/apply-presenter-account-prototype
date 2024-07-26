@@ -42,5 +42,16 @@ router.post('/v3/have-number', function(request, response) {
     }
 })
 
+
+router.post('/v3/type-filings', function(request, response) {
+
+    var typeFilings = request.session.data['typeFilings']
+    if (typeFilings == "one"){
+        response.redirect("/v3/company-number")
+    } else {
+        response.redirect("/v3/have-number")
+    }
+})
+
 module.exports=router;
 
