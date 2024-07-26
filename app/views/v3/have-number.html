@@ -5,6 +5,8 @@
 {% endblock %}
 {% block beforeContent %}
   {% include "/includes/user-bar.html" %}
+    {% include "/includes/back-link.html" %}
+
 {% endblock %}
 
 
@@ -13,32 +15,47 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="have-number" method="post">
 
-      <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="haveNumber-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-      <h1 class="govuk-fieldset__heading">
-        Is the business you work for registered with Companies House?
-      </h1>
-    </legend>
-    <div id="haveNumber-hint" class="govuk-hint">
-      The 8-character reference issued by Companies House when the company was set up
-    </div>
-    <div class="govuk-radios govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="haveNumber" name="haveNumber" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="haveNumber">
-          Yes - you'll need to give the company number 
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="haveNumber-2" name="haveNumber" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="haveNumber-2">
-          No - you'll need to give the business name
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
+
+
+
+
+              {% set businessName %}
+              {{ govukInput({
+                id: "businessName",
+                name: "businessName",
+                type: "text",
+                spellcheck: false,
+                label: {
+                  text: "Enter the name of the business"
+                }
+              }) }}
+              {% endset -%}
+
+              {{ govukRadios({
+                name: "haveNumber",
+                fieldset: {
+                  legend: {
+                    text: "Is the business you work for registered with Companies House?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--xl"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes"
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    conditional: {
+                      html: businessName
+                    }
+                  }
+                ]
+              }) }}
+
+     
 
   {{ govukDetails({
         summaryText: "I do not work for a business",

@@ -38,7 +38,7 @@ router.post('/v3/have-number', function(request, response) {
     if (haveNumber == "yes"){
         response.redirect("/v3/company-number")
     } else {
-        response.redirect("/v3/company-name")
+        response.redirect("/v3/contact-details")
     }
 })
 
