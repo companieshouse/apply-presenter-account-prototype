@@ -57,18 +57,24 @@
 
      
 
-  {{ govukDetails({
-        summaryText: "I do not work for a business",
-        html: '
-        <p class="govuk-body">You should enter your own name if:</p>
+
+      
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      I do not work for a business
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  <p class="govuk-body">You should select 'No' and enter your own name if:</p>
           <ul class="govuk-list govuk-list--bullet">
             <li>you do not work for a business, but you need to file for more than one company</li>
             <li>you are a sole trader and do not have a different trading name</li>
                   </ul>
         
-        '
-      }) }}
-      
+  </div>
+</details>
+
 
         {{ govukButton({
           text: "Continue"
