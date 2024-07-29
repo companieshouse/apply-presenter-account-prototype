@@ -49,7 +49,7 @@ router.post('/v3/type-filings', function(request, response) {
     if (typeFilings == "one"){
         response.redirect("/v3/company-number")
     } else {
-        response.redirect("/v3/have-number")
+        response.redirect("/v3/company-name")
     }
 })
 
