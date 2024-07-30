@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Application submitted - Apply for a Companies House online filing presenter account - GOV.UK
+  Check your answers - Apply for a Companies House online filing presenter account - GOV.UK
 {% endblock %}
 
 
@@ -25,7 +25,58 @@
 
           {
             key: {
-              text: "Address"
+              text: "Is the business you work for registered with Companies House?"
+            },
+            value: {
+              html: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "type-filings",
+                  text: "Change",
+                  visuallyHiddenText: "Is the business you work for registered with Companies House?"
+                }
+              ]
+            }
+          },
+            {
+            key: {
+              text: "Company"
+            },
+            value: {
+              html: "ACME LIMITED (0123456)"
+            },
+            actions: {
+              items: [
+                {
+                  href: "company-number",
+                  text: "Change",
+                  visuallyHiddenText: "company number"
+                }
+              ]
+            }
+          },
+            {
+            key: {
+              text: "Contact name"
+            },
+            value: {
+              html: "Jane Lisa Doe"
+            },
+            actions: {
+              items: [
+                {
+                  href: "contact-details",
+                  text: "Change",
+                  visuallyHiddenText: "contact name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Correspondence address"
             },
             value: {
               html: "72 Guild Street<br>London<br>SE23 6FH<br>United Kingdom"
@@ -33,26 +84,9 @@
             actions: {
               items: [
                 {
-                  href: "enter-your-details",
+                  href: "contact-details#address",
                   text: "Change",
-                  visuallyHiddenText: "address"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Business name"
-            },
-            value: {
-              html: "Alpha accounting"
-            },
-            actions: {
-              items: [
-                {
-                  href: "enter-your-details",
-                  text: "Change",
-                  visuallyHiddenText: "address"
+                  visuallyHiddenText: "correspondence address"
                 }
               ]
             }
